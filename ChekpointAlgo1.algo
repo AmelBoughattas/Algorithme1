@@ -1,0 +1,38 @@
+ALGORITHM checkpoint_algo
+VAR
+    i,lCount,wCount,vCount : INTEGER;
+    sentence : STRING[];
+   
+BEGIN
+  
+    lCount:=0;
+    wCount:=0;
+    vCount:=0;
+
+    i:=0;
+    WHILE (sentence[i]<> ".") DO
+
+        read(sentence[i]);
+
+        lCount:=lCount + 1;
+   
+        IF (sentence[i] = " ") THEN
+           wCount:=wCount + 1
+        END_IF
+
+        IF (sentence[i]="a") OR (sentence[i]="e") OR (sentence[i]="i") OR (sentence[i]="o") OR (sentence[i]="u") OR (sentence[i]="y") THEN
+           vCount:=vCount + 1;
+        END_IF
+      
+        i=i+1;
+    END_WHILE
+
+
+    write("Length of sentence :");  
+    write(lCount);     
+    write("The number words of sentence :");
+    write(wCount);
+    write("The number vowel of sentence :");
+    write(vCount);
+END
+
